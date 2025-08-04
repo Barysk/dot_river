@@ -36,15 +36,11 @@ window#waybar {
 }
 
 /* All elements */
-#workspaces button,
 #tags button,
-#window,
 #custom-date-module,
 #clock,
 #battery,
-#language,
 #wireplumber,
-#mpris,
 #bluetooth,
 #tray,
 #tray menu menuitem {
@@ -60,29 +56,6 @@ window#waybar {
 }
 
 /* Workspaces tags */
-#workspaces button {
-}
-
-#workspaces button.empty {
-  color: @wb_inactive_color;
-}
-
-#workspaces button.visible {
-  border-top: 1px solid @wb_visible_color;
-}
-
-#workspaces button.active {
-  border-top: 1px solid @wb_active_color;
-}
-
-#workspaces button.urgent {
-  border-top: 1px solid @wb_notification_color;
-} 
-
-#workspaces button.special {
-  color: @wb_special_color;
-} 
-
 #tags button {
   color: @wb_inactive_color;
 }
@@ -99,27 +72,12 @@ window#waybar {
   border-top: 1px solid @wb_notification_color;
 } 
 
-/* Current window name */
-#window {
-}
-
-window#waybar.empty #window {
-}
-
 /* Other */
 #wireplumber {
 }
 
 #wireplumber.muted {
   border-top: 1px solid @wb_warning_color;
-}
-
-#mpris {
-  color: @wb_inactive_color;
-}
-
-#mpris.playing {
-  color: @wb_active_color;
 }
 
 #battery {
