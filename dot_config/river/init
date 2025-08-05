@@ -25,6 +25,7 @@ riverctl map normal Super B spawn "brave"
 riverctl map normal Super E spawn "pcmanfm"
 riverctl map normal Super T spawn "Telegram"
 riverctl map normal Super+Alt S spawn "hyprshot -z -s -m region -o ~/Pictures/screenshots/"
+riverctl map normal Super+Shift B spawn "pkill waybar || waybar -t 2500"
 riverctl map normal Super Q close
 
 # Super+Shift+Esc to exit river
@@ -187,6 +188,9 @@ riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events disabled
 
 # Keyboard layout
 riverctl keyboard-layout -variant "legacy,legacy" -options "grp:lalt_lshift_toggle" "pl,by"
+
+# polkit
+systemctl --user start hyprpolkitagent
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
