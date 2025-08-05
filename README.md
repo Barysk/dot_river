@@ -18,7 +18,7 @@
 * waybar
     * nm-applet
 * mako
-* swww
+* swaybg or swww
 * kitty
 * brave
 * pcmanfm

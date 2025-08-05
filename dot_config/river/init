@@ -11,7 +11,8 @@
 
 riverctl spawn "waybar"
 riverctl spawn "mako"
-riverctl spawn "swww-daemon"
+# riverctl spawn "swww-daemon" use [ --format xrgb ] if the image is distorted
+riverctl spawn "swaybg --image $HOME/.config/wallpapers/Touhou_Project/mamizou.jpg --mode fill"
 riverctl spawn "nm-applet"
 riverctl spawn "$HOME/.config/river/preconfig"
 
