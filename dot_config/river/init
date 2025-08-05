@@ -181,6 +181,9 @@ riverctl border-width 0
 # follow cursor
 riverctl focus-follows-cursor normal
 
+# disable touchpad
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events disabled
+
 # Keyboard layout
 riverctl keyboard-layout -variant "legacy,legacy" -options "grp:lalt_lshift_toggle" "pl,by"
 
