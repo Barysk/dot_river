@@ -25,7 +25,7 @@ riverctl map normal Super B spawn "brave"
 riverctl map normal Super E spawn "pcmanfm"
 riverctl map normal Super T spawn "Telegram"
 riverctl map normal Super+Alt S spawn "hyprshot -z -s -m region -o ~/Pictures/screenshots/"
-riverctl map normal Super+Shift B spawn "pkill waybar || waybar -t 2500"
+riverctl map normal Super+Shift B spawn "pkill waybar || waybar"
 riverctl map normal Super Q close
 
 # Super+Shift+Esc to exit river
