@@ -17,22 +17,22 @@
 
 /* Init globals */
 * {
-  border: none;
-  border-radius: 0px;
-  font-family: "M PLUS 2";
-  font-size: 9px;
-  background: none;
-  min-height: 0px;
-  min-width: 0px;
-  padding: 0px;
-  margin: 0px;
-  transition: none;
-  text-shadow: none;
+	border: none;
+	border-radius: 0px;
+	font-family: "M PLUS 2";
+	font-size: 9px;
+	background: none;
+	min-height: 0px;
+	min-width: 0px;
+	padding: 0px;
+	margin: 0px;
+	transition: none;
+	text-shadow: none;
 }
 
 /* Panel */
 window#waybar {
-  background: @wb_panel_color;
+	background: @wb_panel_color;
 }
 
 /* All elements */
@@ -44,32 +44,32 @@ window#waybar {
 #bluetooth,
 #tray,
 #tray menu menuitem {
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 0px;
+	padding-bottom: 0px;
 
-  border-top: 1px solid transparent; /* default value */
-  border-bottom: 1px solid transparent;
-  color: @wb_font_color;
-  font-weight: bold;
+	border-top: 1px solid transparent; /* default value */
+	border-bottom: 1px solid transparent;
+	color: @wb_font_color;
+	font-weight: bold;
 }
 
 /* Workspaces tags */
 #tags button {
-  color: @wb_inactive_color;
+	color: @wb_inactive_color;
 }
 
 #tags button.occupied {
-  color: @wb_active_color;
+	color: @wb_active_color;
 }
 
 #tags button.focused {
-  border-top: 1px solid @wb_active_color;
+	border-top: 1px solid @wb_active_color;
 }
 
 #tags button.urgent {
-  border-top: 1px solid @wb_notification_color;
+	border-top: 1px solid @wb_notification_color;
 } 
 
 /* Other */
@@ -77,22 +77,22 @@ window#waybar {
 }
 
 #wireplumber.muted {
-  border-top: 1px solid @wb_warning_color;
+	border-top: 1px solid @wb_warning_color;
 }
 
 #battery {
 }
 
 #battery.warning {
-  border-top: 1px solid @wb_warning_color;
+	border-top: 1px solid @wb_warning_color;
 }
 
 #battery.critical {
-  border-top: 1px solid @wb_crit_color;
+	border-top: 1px solid @wb_crit_color;
 }
 
 #battery.charging {
-  border-top: 1px solid @wb_charging_color;
+	border-top: 1px solid @wb_charging_color;
 }
 
 #custom-date-module {
@@ -102,25 +102,25 @@ window#waybar {
 }
 
 #tray {
-  border-top: none;
+	border-top: none;
 }
 
 #tray menu {
-  background-color: @wb_panel_color;
+	background-color: @wb_panel_color;
 }
 
 #tray menuitem {
-  border-right: 1px solid transparent;
-  border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-left: 1px solid transparent;
 }
 
 #tray menuitem:hover {
-  border-right: 1px solid @wb_active_color;
-  border-left: 1px solid @wb_active_color;
+	border-right: 1px solid @wb_active_color;
+	border-left: 1px solid @wb_active_color;
 }
 
 tooltip label{
-  color: @wb_active_color;
-  font-weight: bold;
-  text-shadow: 0px 0px 2px black;
+	color: @wb_active_color;
+	font-weight: bold;
+	text-shadow: 0px 0px 2px black;
 }
