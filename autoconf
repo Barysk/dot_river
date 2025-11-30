@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+# deployes config
+deploy ()
+{
+	echo "Deploying dot_river configs"
+
+	cp -rf ./dot_bash_profile $HOME/.bash_profile
+	cp -rf ./dot_bashrc $HOME/.bashrc
+	mkdir -p $HOME/.fonts
+	cp -rf ./dot_fonts/* $HOME/.fonts/
+	mkdir -p $HOME/.config
+	cp -rf ./dot_config/* $HOME/.config/
+	echo 'All done'
+	echo -e \
+	'This config uses my own layout. In order for it to work do this:
+
+	Then sudoedit /usr/share/X11/xkb/rules/evdev.xml and add it near the other English keyboards
+
+	<variant>
+	<configItem>
+	<name>qwerty-seine</name>
+	<description>English (Seine QWERTY)</description>
+	</configItem>
+	</variant>
+	<variant>
+	<configItem>
+	<name>dvorak-seine</name>
+	<description>English (Seine Dvorak)</description>
+	</configItem>
+	</variant>
+
+	'
+
+	echo 'Or simply switch to kb_layout of your choise in .config/river/init'
+}
+
+# collects all config updates
+collect ()
+{
+	echo 'Copying river configs'
+	cp -rf $HOME/.bash_profile ./dot_bash_profile
+	cp -rf $HOME/.bashrc ./dot_bashrc
+	cp -rf $HOME/.fonts/* ./dot_fonts/
+	# configs
+	cp -rf $HOME/.config/fastfetch     ./dot_config/
+	cp -rf $HOME/.config/hypr          ./dot_config/
+	cp -rf $HOME/.config/kitty         ./dot_config/
+	cp -rf $HOME/.config/kritarc       ./dot_config/
+	cp -rf $HOME/.config/mako          ./dot_config/
+	cp -rf $HOME/.config/mimeapps.list ./dot_config/
+	cp -rf $HOME/.config/mpv           ./dot_config/
+	cp -rf $HOME/.config/river         ./dot_config/
+	cp -rf $HOME/.config/tofi          ./dot_config/
+	cp -rf $HOME/.config/wallpapers    ./dot_config/
+	cp -rf $HOME/.config/waybar        ./dot_config/
+	cp -rf $HOME/.config/xkb           ./dot_config/
+	cp -rf $HOME/.config/zathura       ./dot_config/
+	echo 'All done'
+}
+
+case "$1" in
+	deploy) deploy
+	;;
+	collect) collect
+	;;
+	*) echo 'Usage: autoconf deploy|collect'
+	;;
+esac
+

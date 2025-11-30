@@ -1,22 +1,20 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# This is the example configuration file for river.
-#
-# If you wish to edit this, you will probably want to copy it to
-# $XDG_CONFIG_HOME/river/init or $HOME/.config/river/init first.
-#
-# See the river(1), riverctl(1), and rivertile(1) man pages for complete
+# consts
+COLOR_BLACK="0x000000"
+COLOR_ACCENT="0xfe8019"
 
-# documentation.
+# Set background and border color
+riverctl background-color $COLOR_BLACK
+riverctl border-color-focused $COLOR_BLACK
+riverctl border-color-unfocused $COLOR_BLACK
 
+# default
 riverctl spawn "waybar"
 riverctl spawn "mako"
-# riverctl spawn "swww-daemon" use [ --format xrgb ] if the image is distorted
-riverctl spawn "swaybg --image $HOME/.config/wallpapers/Touhou_Project/mamizou.jpg --mode fill"
+riverctl spawn "swaybg --image $HOME/.config/wallpapers/NieR_Theme/OrchestralArrangementAlbumCover.png --mode fill"
 riverctl spawn "nm-applet"
 riverctl spawn "$HOME/.config/river/preconfig"
-
-# Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
 riverctl map normal Super Return spawn "$TERMINAL"
 riverctl map normal Super P spawn "tofi-drun --drun-launch=true"
@@ -24,9 +22,15 @@ riverctl map normal Super Escape spawn "hyprlock"
 riverctl map normal Super B spawn "brave"
 riverctl map normal Super E spawn "pcmanfm"
 riverctl map normal Super T spawn "Telegram"
-riverctl map normal Super+Alt S spawn "hyprshot -z -s -m region -o ~/Pictures/screenshots/"
+
+# change to Super+Print
+riverctl map normal Super+Alt S spawn "$HOME/.config/hypr/wayscr"
 riverctl map normal Super+Shift B spawn "pkill waybar || waybar"
 riverctl map normal Super Q close
+
+# show/hide focus
+riverctl map normal Super+Shift minus spawn "riverctl border-color-focused $COLOR_ACCENT"
+riverctl map normal Super minus spawn "riverctl border-color-focused $COLOR_BLACK"
 
 # Super+Shift+Esc to exit river
 riverctl map normal Super+Shift Escape exit
@@ -157,11 +161,6 @@ do
 	riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
 done
 
-# Set background and border color
-riverctl background-color 0x002b36
-riverctl border-color-focused 0x93a1a1
-riverctl border-color-unfocused 0x586e75
-
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
 
@@ -175,10 +174,11 @@ riverctl rule-add -app-id "bar" csd
 riverctl set-cursor-warp on-focus-change
 
 # attach new view
+# FIXME why below?
 riverctl default-attach-mode below
 
 # border width
-riverctl border-width 0
+riverctl border-width 1
 
 # follow cursor
 riverctl focus-follows-cursor normal
@@ -187,7 +187,7 @@ riverctl focus-follows-cursor normal
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events disabled
 
 # Keyboard layout
-riverctl keyboard-layout -variant "legacy,legacy" -options "grp:lalt_lshift_toggle" "pl,by"
+riverctl keyboard-layout -variant ",legacy" -options "grp:lalt_lshift_toggle" "qwerty-seine,by"
 
 # polkit
 systemctl --user start hyprpolkitagent
@@ -195,4 +195,4 @@ systemctl --user start hyprpolkitagent
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-rivertile -view-padding 4 -outer-padding 4 &
+rivertile -view-padding 0 -outer-padding 0 &

@@ -18,12 +18,11 @@
 * waybar
     * nm-applet
 * mako
-* swaybg or swww
+* swaybg
 * kitty
 * brave
 * pcmanfm
-* telegram
-* hyprshot
+* wayscr -- slurp, grim, wl-clipboard, 
 * hyprlock
 * playerctl
 * brightnessctl
